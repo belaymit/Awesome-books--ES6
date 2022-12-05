@@ -1,0 +1,555 @@
+:root {
+  --clr-primary-1: hsl(205, 86%, 17%);
+  --clr-primary-2: hsl(205, 77%, 27%);
+  --clr-primary-3: hsl(205, 72%, 37%);
+  --clr-primary-4: hsl(205, 63%, 48%);
+  --clr-primary-5: hsl(205, 78%, 60%);
+  --clr-primary-6: hsl(205, 89%, 70%);
+  --clr-primary-7: hsl(205, 90%, 76%);
+  --clr-primary-8: hsl(205, 86%, 81%);
+  --clr-primary-9: hsl(205, 90%, 88%);
+  --clr-primary-10: hsl(205, 100%, 96%);
+  --clr-grey-1: hsl(209, 61%, 16%);
+  --clr-grey-2: hsl(211, 39%, 23%);
+  --clr-grey-3: hsl(209, 34%, 30%);
+  --clr-grey-4: hsl(209, 28%, 39%);
+  --clr-grey-5: hsl(210, 22%, 49%);
+  --clr-grey-6: hsl(209, 23%, 60%);
+  --clr-grey-7: hsl(211, 27%, 70%);
+  --clr-grey-8: hsl(210, 31%, 80%);
+  --clr-grey-9: hsl(212, 33%, 89%);
+  --clr-grey-10: hsl(210, 36%, 96%);
+  --clr-white: #fff;
+  --clr-red-dark: hsl(360, 67%, 44%);
+  --clr-red-light: hsl(360, 71%, 66%);
+  --clr-green-dark: hsl(125, 67%, 44%);
+  --clr-green-light: hsl(125, 71%, 66%);
+  --clr-black: #222;
+  --ff-primary: "Poppins", sans-serif;
+  --transition: all 0.3s linear;
+  --spacing: 0.1rem;
+  --radius: 0.25rem;
+  --light-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  --dark-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+  --max-width: 1170px;
+  --fixed-width: 620px;
+  --text-color: #d3d3d3;
+  --color-black: #272a31;
+  --color-orange: #ec5242;
+  --light-background-color: #f7f7f9;
+  --white-background: #fff;
+}
+
+/*
+    Global Styles
+    */
+
+*,
+::after,
+::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: var(--ff-primary);
+  background: var(--light-background-color);
+  color: var(--clr-grey-1);
+  line-height: 1.5;
+  font-size: 0.875rem;
+}
+
+ul {
+  list-style-type: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+.removeBookBtn,
+.submitBtn {
+  background-color: #fff;
+  border: 1px solid #396df2;
+  border-radius: 8px;
+  box-sizing: border-box;
+  color: #396df2;
+  cursor: pointer;
+  margin: 28px 0;
+  outline: none;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 17px;
+  letter-spacing: 0.03em;
+  line-height: 24px;
+  text-transform: capitalize;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  padding: 13px 23px;
+  transition: all 0.5s ease;
+}
+
+.removeBookBtn:hover,
+.submitBtn:hover {
+  background: #5076cf;
+  color: #fff;
+}
+
+.header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+/* nav */
+
+.header nav {
+  background: transparent;
+  position: fixed;
+  width: 100%;
+  left: 0;
+  top: 0;
+  box-shadow: none;
+  z-index: 100;
+}
+
+.header nav .nav-center {
+  margin: 0 24px;
+}
+
+.header nav .nav-center .nav-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.8rem;
+}
+
+.header nav .nav-center .nav-header .logo {
+  display: none;
+  align-items: center;
+  gap: 10px;
+}
+
+.header nav .nav-center .links a {
+  color: #273746;
+  font-size: 1.2rem;
+  text-transform: capitalize;
+  letter-spacing: 0.1rem;
+  display: block;
+  padding: 0.5rem 3rem;
+  transition: all 0.5s ease-in-out;
+}
+
+.nav-center .links.show-links li a {
+  color: #fff;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 32px;
+  line-height: 44px;
+  transition: all 0.5s ease-in-out;
+}
+
+.header nav .nav-center .nav-header .logo a {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  list-style: none;
+  text-decoration: none;
+  color: black;
+}
+
+.header nav .nav-center .nav-header .nav-toggle {
+  font-size: 2.5rem;
+  color: #255374;
+  background: transparent;
+  outline: none;
+  border-color: transparent;
+  transition: all 0.3s linear;
+  cursor: pointer;
+  margin-top: 12px;
+}
+
+.header nav .nav-center .links {
+  height: 0;
+  overflow: hidden;
+  font-family: var(--ff-primary);
+  transition: all 0.5s linear;
+}
+
+.header nav .nav-center .links.show-links {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 100%;
+  background: transparent;
+  backdrop-filter: blur(5px);
+  background-color: var(--color-black);
+  opacity: 0.9;
+  color: #fff;
+  padding-top: 120px;
+  margin-top: 0;
+}
+
+.nav-center .links.show-links li a:hover {
+  background: #a12c0f;
+  color: inherit;
+}
+
+.active {
+  color: #a12c0f;
+  padding-left: 1.5rem;
+  border: 3px solid #a12c0f;
+  border-radius: 3px;
+}
+
+.nav-toggle .fa-times {
+  position: absolute;
+  z-index: 100;
+  color: #fff;
+  right: 10px;
+  top: 0;
+  font-size: 32px;
+  margin: 24px;
+  display: none;
+}
+
+.nav-toggle .fa-bars.open-icon {
+  display: none;
+}
+
+.nav-toggle .fa-times.close-icon {
+  display: block;
+}
+
+.container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.book-container,
+.contact-container,
+.form-container {
+  background: var(--white-background);
+}
+
+.book {
+  border-bottom: 1px solid #272a31;
+  text-align: left;
+  margin: 8px 42px;
+}
+
+.all-books-container h3 {
+  font-weight: 600;
+  font-style: normal;
+  font-size: 20px;
+  padding: 12px;
+}
+
+.all-books-container p {
+  margin-left: 24px;
+  font-weight: 500;
+  font-family: var(--ff-primary);
+  font-size: 18px;
+  color: #852905;
+}
+
+.book-container h1 {
+  text-align: center;
+  margin: 24px 0;
+}
+
+.all-books {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.form-container h1,
+.form-container {
+  padding: 8px 24px;
+  margin: 24px 0;
+}
+
+.book-form .input-field {
+  display: flex;
+  align-items: center;
+  padding: 0 24px 18px 24px;
+}
+
+.book-form .input-field .input {
+  width: 100%;
+  outline: none;
+  border: 1px solid #d5dbd9;
+  font-size: 15px;
+  font-weight: 400;
+  padding: 15px 38px 15px 16px;
+  border-radius: 5px;
+  transition: all 0.3s ease;
+}
+
+input::placeholder {
+  font-family: "Poppins", sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 17px;
+  line-height: 20px;
+  display: flex;
+  align-items: center;
+  color: #172b4d;
+}
+
+.book-form .input-field .textarea {
+  resize: none;
+  height: 170px;
+}
+
+.book-form .input-field .input:focus {
+  border: 1px solid #384404;
+}
+
+.book p {
+  font-weight: 400;
+  font-size: 18px;
+  padding-top: 12px;
+  border-bottom: 0.3px solid #ececee;
+}
+
+.all-books h3 {
+  font-weight: 500;
+  font-size: 16px;
+  padding-left: 12px;
+}
+
+.footer {
+  height: auto;
+  width: 100%;
+  background: var(--color-black);
+  color: var(--text-color);
+  padding: 32px;
+  margin-top: 42px;
+}
+
+.footer-container .footer-logo img {
+  font-size: 18px;
+  width: 100px;
+}
+
+.footer-container {
+  display: grid;
+  column-gap: 8px;
+  grid-template-columns: 1fr 2fr;
+  margin: 0 20px;
+}
+
+.all-books-container {
+  background: #fff;
+  border: 0.5px solid #272a31;
+  border-radius: 12px;
+  margin: 24px;
+}
+
+.book-container {
+  margin-top: 64px;
+  width: 100%;
+}
+
+.book-item-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 0 8px;
+  padding: 8px 12px;
+}
+
+.book-item-container .book-title {
+  font-size: 18px;
+  font-weight: 500;
+}
+
+.book-item-container:nth-child(odd) {
+  background-color: #f7f7f9;
+}
+
+.deleteBtn {
+  background-color: rgb(187, 34, 34);
+  border: 1px solid #852905;
+  border-radius: 8px;
+  box-sizing: border-box;
+  color: #fff;
+  cursor: pointer;
+  outline: none;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 17px;
+  letter-spacing: 0.03em;
+  line-height: 24px;
+  text-transform: capitalize;
+  padding: 4px;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  transition: all 0.5s ease;
+}
+
+.deleteBtn:hover {
+  background: rgb(6, 77, 99);
+  border: 1px solid #055f6b;
+}
+
+.hidden {
+  display: none;
+}
+
+#current-time {
+  margin: 120px 12px 0 12px;
+  text-align: right;
+  padding: 0 1.5rem;
+  align-self: flex-end;
+  font-size: 18px;
+}
+
+.contact-container {
+  margin: 32px 12px;
+  padding: 24px;
+}
+
+.contact-container h1 {
+  text-align: center;
+  font-size: 28px;
+  margin: 12px 0 32px 0;
+}
+
+.contact-container p {
+  font-size: 18px;
+  margin-left: 32px;
+}
+
+.contact-container ul {
+  margin-top: 16px;
+}
+
+.contact-container li {
+  list-style: circle;
+  margin-left: 32px;
+  font-size: 16px;
+}
+
+.info {
+  color: black;
+  font-size: 1.3rem;
+  z-index: 1;
+  display: none;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.footer-content p {
+  font-weight: 400;
+  font-size: 16px;
+}
+
+@media (min-width: 480px) {
+  .footer-container {
+    margin: auto 42px;
+  }
+}
+
+@media (min-width: 768px) {
+  .header nav {
+    background-color: var(--clr-white);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  }
+
+  .all-books-container {
+    width: 50%;
+  }
+
+  .header nav .nav-center {
+    margin: 0 32px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem;
+  }
+
+  .header nav .nav-center .nav-header {
+    padding: 0;
+  }
+
+  .header nav .nav-center .nav-header .logo {
+    display: block;
+  }
+
+  .header nav .nav-center .nav-header .logo a > img {
+    width: 200px;
+  }
+
+  .header nav .nav-center .nav-header .nav-toggle {
+    display: none;
+  }
+
+  .header nav .nav-center .nav-header .nav-toggle:hover {
+    color: #063251;
+  }
+
+  .header nav .nav-center .links {
+    height: auto;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    list-style: none;
+  }
+
+  .header nav .nav-center .links a {
+    padding: 0 8px;
+    margin: 0 0.5rem;
+  }
+
+  .header nav .nav-center .links a:hover {
+    padding: 0;
+    background: transparent;
+  }
+
+  .headline-container .headline {
+    padding: 60px 120px 24px 120px;
+  }
+
+  .footer-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: auto 64px;
+    gap: 40px;
+  }
+
+  .form-container {
+    width: 50%;
+  }
+
+  .book-container {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+  }
+
+  .contact-container {
+    width: 60%;
+  }
+}
+
+@media (min-width: 1200px) {
+  .header nav .nav-center {
+    margin: 0 120px;
+  }
+
+  .footer-container {
+    margin: auto 124px;
+  }
+}

@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css"
+      integrity="sha512-YWzhKL2whUzgiheMoBFwW8CKV4qpHQAEuvilg9FAn5VJUDwKZZxkJNuGM4XkWuk94WCrrwslk8yWNGmY1EduTA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <script
+      src="https://kit.fontawesome.com/1bc3a7e061.js"
+      crossorigin="anonymous"
+    ></script>
+    <link rel="stylesheet" href="index.css" />
+    <script type="module" src="./index.js"></script>
+    <title>Awesome books: ES6</title>
+  </head>
+  <body>
+    <header class="header">
+      <nav>
+        <div class="nav-center">
+          <div class="nav-header">
+            <div class="logo">
+              <a href="#">
+                <h2>Awesome Books</h2>
+              </a>
+            </div>
+            <div class="nav-toggle">
+              <i class="fa-solid fa-bars"></i>
+              <i class="fa-solid fa-times"></i>
+            </div>
+          </div>
+          <ul class="links">
+            <li id="nav-booklist">
+              <a href="#bookList" class="active menu-item">List</a>
+            </li>
+            <li>|</li>
+            <li id="nav-add"><a href="#addNewBook" class="menu-item">Add New</a></li>
+            <li>|<li/>
+            <li id="nav-contact"><a href="#contact" class="menu-item">Contact</a></li>
+          </ul>
+        </div>
+      </nav>
+      <p id="current-time">March 19th 2021, 9:25:32 am</p>
+    </header>
+    <!-- Book List section -->
+    <section class="container" id="bookList">
+      <div class="book-container">
+        <h1>All Awesome books</h1>
+        <div class="all-books-container"></div>
+      </div>
+    </section>
+    <!-- ADD NEW BOOK -->
+    <section class="container hidden" id="addNewBook">
+      <div class="form-container">
+        <h1>Add Books</h1>
+        <form id="book-form" class="book-form" method="post">
+          <div class="input-field">
+            <input
+              type="text"
+              class="input"
+              name="bookTitle"
+              id="bookTitle"
+              placeholder="Title"
+              required
+            />
+          </div>
+          <div class="input-field">
+            <input
+              type="text"
+              class="input"
+              name="authorName"
+              id="authorName"
+              placeholder="Author"
+              required
+            />
+          </div>
+          <div class="input-field">
+            <input
+              type="submit"
+              class="submitBtn"
+              id="submitBtn"
+              value="submit"
+              class="btn"
+            />
+          </div>
+        </form>
+        <p class="info">All fields are empty!</p>
+      </div>
+    </section>
+
+    <section class="hidden container" id="contact">
+      <div class="contact-container">
+        <h1>Contact information</h1>
+        <p>Do have any questions or you just want to say "Hello"?</p>
+        <p>You can reach out to us!</p>
+        <ul>
+          <li>Our e-mail:asmbalasagdheve0110@gmail.com</li>
+          <li>Our phone number: (+251) 92-876-1234</li>
+          <li>Our address: Microverse, San francisco</li>
+        </ul>
+      </div>
+    </section>
+    <!-- FOOTER SECTION -->
+    <footer class="footer">
+      <div class="footer-container">
+        <div class="footer-logo">
+          <img src="./Images/murple_logo.png" alt="conference-logo" />
+        </div>
+        <div class="footer-content">
+          <p>Copyright &copy;<span class="year"></span> Belay Birhanu G.</p>
+          <p>This website is done under the guidance of Microverse coding School.</p>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

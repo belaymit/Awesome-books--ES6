@@ -39,7 +39,7 @@ After you're finished please remove all the comments and instructions!
   - [🛠 Built With](#built-with)
     - [Tech Stack](#tech-stack)
     - [Key Features](#key-features)
-  <!-- - [🚀 Live Demo](#live-demo) -->
+  - [🚀 Live Demo](#live-demo)
   
 - [💻 Getting Started](#getting-started)
   - [Setup](#setup)
@@ -90,8 +90,8 @@ After you're finished please remove all the comments and instructions!
 
 <!-- LIVE DEMO -->
 
-<!-- ## 🚀 Live Demo <a name="live-demo"></a> -->
-
+## 🚀 Live Demo <a name="live-demo"></a>
+[Live Demo](https://belaymit.github.io/Awesome-books--ES6/)
 <!-- ## Video Description <a name="video-description"></a> -->
 
 
